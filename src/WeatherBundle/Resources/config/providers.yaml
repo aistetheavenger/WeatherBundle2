@@ -1,0 +1,7 @@
+services:
+    _defaults:
+        public: false
+
+    nfq_weather.provider.openweathermap:
+        class: Nfq\WeatherBundle\OpenWeatherMapWeatherProvider
+        arguments: ['']
