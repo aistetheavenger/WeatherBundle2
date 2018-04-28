@@ -14,14 +14,16 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('provider')->end()
+                ->scalarNode('provider')
+                    ->isRequired()
+                ->end()
                 ->arrayNode('providers')
                     ->children()
                         ->scalarNode('yahoo')->end()
                         ->arrayNode('openweathermap')
                             ->children()
                                 ->scalarNode('api_key')
-                                    ->defaultValue('secretapikey')
+                                    ->defaultValue('api_key')
                                 ->end()
                             ->end()
                         ->end()
